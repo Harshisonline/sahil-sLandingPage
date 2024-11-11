@@ -1,4 +1,5 @@
 .cards{
+    text-align:left ;
     width: 100%;
     display: flex;
     align-items: center;
@@ -21,6 +22,10 @@
     box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.055);
 }
 
+.contents{
+    width: 70vh;
+}
+
 .cards:hover{
     animation: scaleup 0.1s ease-in-out forwards;
 }
@@ -28,6 +33,7 @@
 .reverse{
     flex-direction: row-reverse;
     animation: levitate_reverse 2s ease-in-out infinite alternate;
+    text-align:right ;
 }
 
 @media (max-width:900px) {
@@ -36,7 +42,7 @@
         height: 100px;
     }
     .contents{
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
@@ -46,7 +52,7 @@
         height: 65px;
     }
     .contents{
-        font-size: 12px;
+        font-size: 10px;
     }
 }
 

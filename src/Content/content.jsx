@@ -51,29 +51,34 @@ export default function Content() {
             <div className={style.container_1}>
                 <h1><span className={style.ul}>Unlimited</span> Storage for Everyone</h1>
                 <div className={style.content}>
-                    [countable] a small piece of something, especially paper, cloth, etc. She scribbled his phone number on a scrap of paper. (figurative) She was just a scrap of a thing (= small and thin).
+                Enjoy truly unlimited storage for all your needs, with secure, fast, and accessible options. No more constraints on space—store and manage your files effortlessly, anytime and from any device
                 </div>
                 <Button className={style.btn} styles={{ marginBottom: '10px' }} intext="Try for Free" classes="blue" />
             </div>
             <CircularButton />
             <div className={`${style.container_2} ${isVisibleContainer2 ? style.visible : style.hidden}`} >
                 <FeatureCard 
-                    title="Feature 1 heading" 
-                    content="Football is a family of team sports that involve, to varying degrees, kicking a ball to score a goal. Unqualified, the word football generally means the form of football that " />
+                    title="MongoDB: NoSQL Database" 
+                    content="MongoDB stores data in a flexible, document-based format, ideal for scaling and handling large datasets with high performance." />
                 <FeatureCard 
-                    title="Feature 2 heading" 
-                    content="Football is a family of team sports that involve, to varying degrees, kicking a ball to score a goal. Unqualified, the word football generally means the form of football that " />
+                    title="Next.js: Fast & SEO-Friendly" 
+                    content="Next.js offers server-side rendering and static site generation, delivering high-speed, SEO-friendly websites and seamless user experiences" />
                 <FeatureCard 
-                    title="Feature 3 heading" 
-                    content="Football is a family of team sports that involve, to varying degrees, kicking a ball to score a goal. Unqualified, the word football generally means the form of football that " />
+                    title="Node.js: Fast & Scalable Backend" 
+                    content="Node.js enables high-performance, real-time applications with a lightweight, event-driven architecture, perfect for scalable backend solutions." />
             </div>
             <div className={`${style.container_3} ${isVisibleContainer3 ? style.visible : style.hidden}`} >
                 <div className={style.contentLayer}>
                     <h1>Why you should choose us?</h1>
                     <div>
-                        <WFeature images={mongo} />
-                        <WFeature images={fastReliable} reverse={true} />
-                        <WFeature images={highsec} />
+                        <WFeature images={mongo}
+                        contentss='Choose us for dependable, efficient solutions powered by MongoDB, a trusted database that ensures your data is always secure and accessible.' />
+                        <WFeature
+                        contentss='Experience fast, reliable service with us—our expertise and MongoDB integration ensure seamless, high-performance solutions tailored to your needs.'
+                        images={fastReliable} reverse={true} />
+                        <WFeature
+                        contentss='Trust us for top-notch security; our solutions prioritize safeguarding your data with advanced protections, ensuring your peace of mind.'
+                        images={highsec} />
                     </div>
                 </div>
             </div>
