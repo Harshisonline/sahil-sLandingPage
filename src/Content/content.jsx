@@ -5,8 +5,8 @@ import CircularButton from "../circular button/circular_button";
 import FeatureCard from "../featureCard/featureCard";
 import WFeature from "../whyFeature/whyfeature";
 import mongo from '../assets/mongodb.png';
-import fastReliable from '../assets/fast_reliable.png'
-import highsec from '../assets/highSec.jpg'
+import fastReliable from '../assets/fast_reliable.png';
+import highsec from '../assets/highSec.jpg';
 
 export default function Content() {
     const [isVisibleContainer2, setIsVisibleContainer2] = useState(false);
@@ -17,23 +17,11 @@ export default function Content() {
         const container3 = document.querySelector(`.${style.container_3}`);
         
         const observer2 = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisibleContainer2(true);
-                } else {
-                    setIsVisibleContainer2(false);
-                }
-            },
+            ([entry]) => setIsVisibleContainer2(entry.isIntersecting),
             { threshold: 0.5 }
         );
         const observer3 = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisibleContainer3(true);
-                } else {
-                    setIsVisibleContainer3(false);
-                }
-            },
+            ([entry]) => setIsVisibleContainer3(entry.isIntersecting),
             { threshold: 0.5 }
         );
 
@@ -46,16 +34,23 @@ export default function Content() {
         };
     }, []);
 
+    const handleScrollToBottom = () => {
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: "smooth",
+        });
+    };
+
     return (
         <div>
             <div className={style.container_1}>
                 <h1><span className={style.ul}>Unlimited</span> Storage for Everyone</h1>
                 <div className={style.content}>
-                Enjoy truly unlimited storage for all your needs, with secure, fast, and accessible options. No more constraints on space—store and manage your files effortlessly, anytime and from any device
+                    Enjoy truly unlimited storage for all your needs, with secure, fast, and accessible options. No more constraints on space—store and manage your files effortlessly, anytime and from any device.
                 </div>
                 <Button className={style.btn} styles={{ marginBottom: '10px' }} intext="Try for Free" classes="blue" />
             </div>
-            <CircularButton />
+            <CircularButton onClick={handleScrollToBottom} />
             <div className={`${style.container_2} ${isVisibleContainer2 ? style.visible : style.hidden}`} >
                 <FeatureCard 
                     title="MongoDB: NoSQL Database" 
