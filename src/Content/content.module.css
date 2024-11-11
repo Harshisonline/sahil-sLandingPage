@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.container_1 {
+    height: 91vh;
+    font-family: Inter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.content {
+    font-size: 15px;
+    width: 50vw;
+    color: grey;    
+    margin-bottom: 100px;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+.container_2, .container_3 {
+    min-height: 91vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5vw;
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.container_2.visible, .container_3.visible {
+    animation: fade-in 0.7s ease-out forwards;
+}
+
+.container_2.hidden, .container_3.hidden {
+    animation: fade-out 0.7s ease-out forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8);
+    }
+}
+
+.contentLayer {
+    scale: 0.9;
+    margin-bottom: 100px;
+    height: fit-content;
+    width: 80vw;
+    background-color: rgba(217, 217, 217, 0.349);
+    border-radius: 10px;
+    text-align: center;
+    transition: box-shadow 0.2s ease 0.1s;
+}
+
+
+.contentLayer h1 {
+    margin-top: 5vh;
+    font-size: 40px;
+}
+
+.ul {
+    background: linear-gradient(90deg, #FE0050 0%, #003098 38.45%, #AAED00 93.45%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 1000px) {
+    .container_1 h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .content {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 700px) {
+    .contentLayer h1 {
+        font-size: 32px;
+    }
+}
+
+.container_1 h1{
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    animation: levitate 2s ease-in-out infinite alternate;
+}
+
+.btn{
+    animation: levitate 2s ease-in-out infinite alternate;
+}
+
+@keyframes levitate {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
